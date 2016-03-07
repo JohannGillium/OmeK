@@ -1,0 +1,78 @@
+---
+layout: default
+---
+ 
+ <div id="content">
+
+<div id="primary">
+    <h1>{{ page.title }}</h1>
+
+    <!-- Items metadata -->
+    <div id="item-metadata">
+        <div class="element-set">
+        <h2>Dublin Core</h2>
+            <div id="dublin-core-title" class="element">
+        <h3>Title</h3>
+                    <div class="element-text">{{ page.title }}</div>
+            </div><!-- end element -->
+        <div id="dublin-core-subject" class="element">
+        <h3>Subject</h3>
+                    <div class="element-text">{{ page.subject }}</div>
+            </div><!-- end element -->
+        <div id="dublin-core-description" class="element">
+        <h3>Description</h3>
+                    <div class="element-text">
+</div>{{ page.description }}
+            </div><!-- end element -->
+        <div id="dublin-core-source" class="element">
+        <h3>Source</h3>
+                    <div class="element-text">{{ page.source }}</div>
+            </div><!-- end element -->
+        <div id="dublin-core-rights" class="element">
+        <h3>Rights</h3>
+                    <div class="element-text">{{ page.rights }}</div>
+            </div><!-- end element -->
+        <div id="dublin-core-coverage" class="element">
+        <h3>Coverage</h3>
+                    <div class="element-text">{{ page.coverage }}</div>
+            </div><!-- end element -->
+    </div><!-- end element-set -->
+<div class="element-set">
+        <h2>Still Image Item Type Metadata</h2>
+            <div id="still-image-item-type-metadata-original-format" class="element">
+        <h3>Original Format</h3>
+                    <div class="element-text">{{ page.original format }}</div>
+            </div><!-- end element -->
+    </div><!-- end element-set -->
+    </div>
+
+    <h3>Files</h3>
+    <div id="item-images">
+         <div class="item-file image-png"><a class="download-file" href=""><img src="" class="thumb" alt="" title=""/>
+</a></div>    </div>
+
+<!--The following is for images, if there are.-->
+
+<div class="img_row">
+	<a href="{{ site.baseurl }}/images/original/{{ page.file }}"><img class="col two" src="{{ site.baseurl }}/images/thumbnails/{{ page.filethumbnail }}"></a>
+	<img class="col one" src="/img/10.jpg">
+</div>
+
+   
+     <!-- The following prints a list of all tags associated with the item -->
+    
+    <!-- The following prints a citation for this item. -->
+    <div id="item-citation" class="element">
+        <h3>Citation</h3>
+        <div class="element-text"></div>
+    </div>
+       
+
+    <ul class="item-pagination navigation">
+        <li id="previous-item" class="previous"><a href="/items/show/329">&larr; Previous Item</a></li>
+        <li id="next-item" class="next"><a href="/items/show/331">Next Item &rarr;</a></li>
+    </ul>
+
+</div> <!-- End of Primary. -->
+
+ </div><!-- end content -->

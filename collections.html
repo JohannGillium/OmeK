@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+ 
+    {% for collection in site.collections %}
+    {% unless collection.label == 'posts' %}
+    {% capture label %}{{ collection.label }}{% endcapture %}
+          <div class="collection record">
+          <h2>{{ collection.title }}</h2>
+          <div class="collection-meta">
+          	<div class="collection description">
+          		<p>
+          		{{ collection.description }}
+          		</p>
+          	</div>
+          	<p class="view-items-link">
+          	View the items in {{ collection.title }}
+          	</p>
+          </div>
+          </div>
+          {% endunless %}
+          {% endfor %}
+     
+  
+  

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Les affabulations intempestives</title>
+  <meta name="description" content="Ma modeste contribution à l'histoire de la pensée.">
+
+
+  <link rel="canonical" href="http://yourdomain.com/search_travail.html">
+  <link rel="alternate" type="application/rss+xml" title="Les affabulations intempestives" href="http://yourdomain.com/feed.xml">
+  <link rel="stylesheet" type="text/css" href="/css/mhdh.css">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Les affabulations intempestives</a>
+
+<a href="/"><img id="mhdh-logo" src="/assets/mhdh-logo.png" alt="MHDH Logo"/></a>
+
+    <nav class="site-nav">
+    
+ <div id="form">
+ <form action="get" id="site_search"><input id="search" type="text"></input><button id="search" type="button">Search</button></form>
+ <span><a href="/search.html">Advanced search</a></span>
+<div id="results"></div>
+<ul id="search_results"></ul>
+<script src="/js/lunr.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/js/search2.js"></script>
+ </div>
+    
+<div id="primary-nav">
+             <ul id="navigation">
+    <li>
+        <a href="/about">About</a>
+    </li>
+    <li>
+        <a href="/neatline">Interactive Map</a>
+    </li>
+    <li>
+        <a href="/exhibits">Browse Exhibits</a>
+    </li>
+    <li>
+        <a href="/collections.html">Browse Collections</a>
+    </li>
+    <li>
+        <a href="/items.html">Browse Items</a>
+    </li>
+    <li>
+        <a href="/items.html">Credits</a>
+    </li>
+</ul>         </div>
+      
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <!--Le formulaire sur le site de Jekyll est foireux.-->
+
+<div id="form">
+ <form action="get" id="site_search"><input id="search" type="text"></input><button id="search" type="button">Search</button><br/>Search using this query type :<br/>
+ <input type="checkbox" name="record_type" value="Keyword">Keyword<br/>
+ <input type="checkbox" name="record_type" value="Boolean">Boolean<br/>
+ <input type="checkbox" name="record_type" value="Exact_match">Exact Match<br/>
+Search only these record types :<br/><input type="checkbox" name="record_type" value="Item">Item<br/><input type="checkbox" name="record_type" value="File">File<br/><input type="checkbox" name="record_type" value="Collection">Collection<br/><input type="checkbox" name="record_type" value="Exhibit">Exhibit<br/></form>
+ <span><a href="/asearch.html">Advanced search</a></span>
+ 
+ li>
+</ul>         </div>
+
+        
+    <div id="content">
+
+
+<h1>Search Items</h1>
+
+<nav class="items-nav navigation secondary-nav">
+    <ul class="navigation">
+    <li>
+        <a href="/items/browse">Browse All</a>
+    </li>
+    <li>
+        <a href="/items/tags">Browse by Tag</a>
+    </li>
+    <li class="active">
+        <a href="/items/search">Search Items</a>
+    </li>
+</ul></nav>
+
+
+<form id="advanced-search-form" action="/items/browse" method="GET">
+    <div id="search-keywords" class="field">
+        <label for="keyword-search">Search for Keywords</label>        <div class="inputs">
+        <input type="text" name="search" id="keyword-search" value="" size="40">        </div>
+    </div>
+    <div id="search-narrow-by-fields" class="field">
+        <div class="label">Narrow by Specific Fields</div>
+        <div class="inputs">
+                    <div class="search-entry">
+                <select name="advanced[0][element_id]" id="" title="Search Field" class="advanced-search-element">
+    <option value="">Select Below </option>
+    <optgroup id="-optgroup-Dublin Core" label="Dublin Core">
+    <option value="37">Contributor</option>
+    <option value="38">Coverage</option>
+    <option value="39">Creator</option>
+    <option value="40">Date</option>
+    <option value="41">Description</option>
+    <option value="42">Format</option>
+    <option value="43">Identifier</option>
+    <option value="44">Language</option>
+    <option value="45">Publisher</option>
+    <option value="46">Relation</option>
+    <option value="47">Rights</option>
+    <option value="48">Source</option>
+    <option value="49">Subject</option>
+    <option value="50">Title</option>
+    <option value="51">Type</option>
+    </optgroup>
+    <optgroup id="-optgroup-Item Type Metadata" label="Item Type Metadata">
+    <option value="22">BCC</option>
+    <option value="36">Bibliography</option>
+    <option value="35">Biographical Text</option>
+    <option value="31">Birth Date</option>
+    <option value="32">Birthplace</option>
+    <option value="15">Bit Rate/Frequency</option>
+    <option value="21">CC</option>
+    <option value="12">Compression</option>
+    <option value="33">Death Date</option>
+    <option value="14">Director</option>
+    <option value="11">Duration</option>
+    <option value="17">Email Body</option>
+    <option value="29">Event Type</option>
+    <option value="19">From</option>
+    <option value="3">Interviewee</option>
+    <option value="2">Interviewer</option>
+    <option value="27">Lesson Plan Text</option>
+    <option value="6">Local URL</option>
+    <option value="4">Location</option>
+    <option value="26">Materials</option>
+    <option value="23">Number of Attachments</option>
+    <option value="25">Objectives</option>
+    <option value="34">Occupation</option>
+    <option value="7">Original Format</option>
+    <option value="30">Participants</option>
+    <option value="10">Physical Dimensions</option>
+    <option value="13">Producer</option>
+    <option value="52">Scale</option>
+    <option value="24">Standards</option>
+    <option value="18">Subject Line</option>
+    <option value="1">Text</option>
+    <option value="16">Time Summary</option>
+    <option value="20">To</option>
+    <option value="5">Transcription</option>
+    <option value="28">URL</option>
+    <option value="53">Video iFrame</option>
+    </optgroup>
+</select><select name="advanced[0][type]" id="" title="Search Type" class="advanced-search-type">
+    <option value="" selected="selected">Select Below </option>
+    <option value="contains">contains</option>
+    <option value="does not contain">does not contain</option>
+    <option value="is exactly">is exactly</option>
+    <option value="is empty">is empty</option>
+    <option value="is not empty">is not empty</option>
+</select><input type="text" name="advanced[0][terms]" id="" value="" size="20" title="Search Terms" class="advanced-search-terms">                <button type="button" class="remove_search" disabled="disabled" style="display: none;">Remove field</button>
+            </div>
+                </div>
+        <button type="button" class="add_search">Add a Field</button>
+    </div>
+
+    <div id="search-by-range" class="field">
+        <label for="range">Search by a range of ID#s (example: 1-4, 156, 79)</label>        <div class="inputs">
+        <input type="text" name="range" id="range" value="" size="40">        </div>
+    </div>
+
+    <div class="field">
+        <label for="collection-search">Search By Collection</label>        <div class="inputs">
+        <select name="collection" id="collection-search">
+    <option value="">Select Below </option>
+    <option value="3">Bloomingdale Asylum</option>
+    <option value="1">Cathedral of St. John the Divine</option>
+    <option value="5">Fire Engine Company No. 47</option>
+    <option value="10">Interborough Rapid Transit Company (IRT) Subway</option>
+    <option value="7">Leake and Watts Orphan Home</option>
+    <option value="4">Lion Brewery</option>
+    <option value="11">Riverside Park</option>
+    <option value="2">St. Luke's Hospital</option>
+    <option value="12">The Riverside Church</option>
+    <option value="14">Videbimus Lumus: Butler Library Mural</option>
+</select>        </div>
+    </div>
+
+    <div class="field">
+        <label for="item-type-search">Search By Type</label>        <div class="inputs">
+        <select name="type" id="item-type-search">
+    <option value="">Select Below </option>
+    <option value="14">Dataset</option>
+    <option value="9">Email</option>
+    <option value="8">Event</option>
+    <option value="11">Hyperlink</option>
+    <option value="13">Interactive Resource</option>
+    <option value="10">Lesson Plan</option>
+    <option value="18">Map</option>
+    <option value="3">Moving Image</option>
+    <option value="4">Oral History</option>
+    <option value="12">Person</option>
+    <option value="15">Physical Object</option>
+    <option value="16">Service</option>
+    <option value="17">Software</option>
+    <option value="5">Sound</option>
+    <option value="6">Still Image</option>
+    <option value="19">Streaming Video</option>
+    <option value="1">Text</option>
+</select>        </div>
+    </div>
+
+    
+    <div class="field">
+        <label for="tag-search">Search By Tags</label>        <div class="inputs">
+        <input type="text" name="tags" id="tag-search" value="" size="40">        </div>
+    </div>
+
+
+    
+    <div class="field">
+        <label for="featured">Featured/Non-Featured</label>        <div class="inputs">
+        <select name="featured" id="featured">
+    <option value="">Select Below </option>
+    <option value="1">Only Featured Items</option>
+    <option value="0">Only Non-Featured Items</option>
+</select>        </div>
+    </div>
+
+    <div class="field"><div class="two columns alpha"><label for="exhibit">Search by Exhibit</label></div><div class="five columns omega inputs"><select name="exhibit" id="exhibit">
+    <option value="">Select Below </option>
+    <option value="4">St. Luke's Hospital </option>
+    <option value="6">Riverside Park</option>
+    <option value="12">The Riverside Church</option>
+    <option value="13">Engine Company No. 47</option>
+    <option value="20">Cathedral of St. John the Divine: Recovering the Vision of Heins and La Farge</option>
+    <option value="22">The Lion Brewery: 90 years of social history</option>
+    <option value="23">Leake and Watts Orphan House</option>
+    <option value="24">Videbimus Lumen: Butler Library Mural</option>
+    <option value="27">The Opening of the IRT Subway</option>
+    <option value="28">Bloomingdale Asylum</option>
+</select></div></div>    <div>
+                <input type="submit" class="submit" name="submit_search" id="submit_search_advanced" value="Search for items">
+    </div>
+</form>
+ 
+<div id="results"></div>
+<ul id="search_results"></ul>
+<script src="/js/lunr.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/js/search2.js"></script>
+ </div>
+
+
+
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Les affabulations intempestives</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Les affabulations intempestives</li>
+          <li><a href="mailto:johanngillium@gmail.com">johanngillium@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/JohannGillium"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">JohannGillium</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/JLeuwen"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">JLeuwen</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Ma modeste contribution à l'histoire de la pensée.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

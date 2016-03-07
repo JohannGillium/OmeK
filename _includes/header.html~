@@ -1,0 +1,48 @@
+<header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+<a href="/"><img id="mhdh-logo" src="{{ site.baseurl }}/assets/mhdh-logo.png" alt="MHDH Logo"/></a>
+
+    <nav class="site-nav">
+    
+ <div id="form">
+ <form action="get" id="site_search"><input id="search" type="text"></input><button id="search" type="button">Search</button></form>
+ <span><a href="{{ site.baseurl }}/asearch.html">Adanced search</a></span>
+<div id="results"></div>
+<ul id="search_results"></ul>
+<script src="{{site.baseurl}}/js/lunr.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{{site.baseurl}}/js/search2.js"></script>
+ </div>
+    
+<div id="primary-nav">
+             <ul id="navigation">
+    <li>
+        <a href="/about">About</a>
+    </li>
+    <li>
+        <a href="/neatline">Interactive Map</a>
+    </li>
+    <li>
+        <a href="/exhibits">Browse Exhibits</a>
+    </li>
+    <li>
+        <a href="{{site.baseurl}}/collections.html">Browse Collections</a>
+    </li>
+    <li>
+        <a href="{{site.baseurl}}/items.html">Browse Items</a>
+    </li>
+    <li>
+        <a href="{{site.baseurl}}/items.html">Credits</a>
+    </li>
+</ul>         </div>
+      
+      
+    </nav>
+
+  </div>
+
+</header>

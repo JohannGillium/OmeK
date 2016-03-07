@@ -1,0 +1,35 @@
+---
+layout: default
+---
+ 
+{% for collection in site.collections %}
+    {% unless collection.label == 'posts' %}      
+
+  {% for doc in collection.docs %}
+  
+  <div class="item record">
+    <h2><a href="{{ site.baseurl }}/{{ doc.collection }}/{{ doc.title }}.html" class="permalink">{{ doc.title }}</a></h2>
+    <div class="item-meta">
+        <div class="item-img">
+    <!-- Changed from square thumbnail to regular thumbnail. Signed, the intrepid Alex and Bob.
+        <a href="/items/show/333"><img src="http://mhdh.library.columbia.edu/files/square_thumbnails/f4329b4a2a548e7740a1b5d1b3a117a6.jpg" alt="A Site for the Cathedral.jpg" title="A Site for the Cathedral.jpg"/>
+</a> -->
+    <a href="{{ site.baseurl }}/images/original/{{ doc.file }}"><img src="{{ site.baseurl }}/images/thumbnails/{{ doc.filethumbnail }}" alt="{{ doc.fichier }}" title="{{ doc.fichier }}"/>
+</a>    </div>
+    
+        <div class="item-description">{{ doc.description }}</div>
+    
+<!-- 
+     -->
+
+    
+    </div><!-- end class="item-meta" -->
+</div><!-- end class="item hentry" -->
+  
+  {% endfor %}
+           
+          </div>
+          {% endunless %}
+          {% endfor %} 
+    
+  

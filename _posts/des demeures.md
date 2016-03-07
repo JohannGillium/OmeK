@@ -1,0 +1,29 @@
+---
+layout: fiction
+title: Test2
+author: André Gide
+editor: Johann Gillium
+source: bibliothèque municipale de Trouloulou
+cote: 72bis33r5
+toc:
+- Par une nuit où les éclairs fulguraient de toutes part
+- Pérégrinations déraisonnables
+- Assaisonnements audacieux
+---
+
+#Par une nuit où les éclairs fulguraient de toutes parts
+
+Le professeur Voläpuck, s'éveillant d'un assoupissement prolongé, s'aperçut qu'on avait dérobé sa lampe de chevet. Immédiatement, il soupçonna ses domestiques, mais dut rapidement admettre qu'un fait fragilisait cette hypothèse : *il n'avait pas de domestiques*.
+
+#Pérégrinations déraisonnables
+
+Mesdames, messieurs, la crise actuelle a pour conséquence obligatoire **l'urgente nécessité** d'un projet porteur de véritables espoirs, notamment pour les plus démunis.
+
+La liberté ne tiens qu'à un fils et c'est pourquoi je tiens à vous dire que la prise de conscience de nos dirigeants entraîne une mission somme toute des plus exaltantes pour moi : l'élaboration d'un avenir s'orientant vers plus de progrès et plus de justice.
+
+#Assaisonnements audacieux
+
+Mesdames, messieurs, la crise actuelle a pour conséquence obligatoire l'urgente nécessité d'un projet porteur de véritables espoirs, notamment pour les plus démunis.
+
+La liberté ne tiens qu'à un fils et c'est pourquoi je tiens à vous dire que la prise de conscience de nos dirigeants entraîne une mission somme toute des plus exaltantes pour moi : l'élaboration d'un avenir s'orientant vers plus de progrès et plus de justice.
+

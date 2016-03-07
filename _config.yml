@@ -1,0 +1,32 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Les affabulations intempestives
+email: johanngillium@gmail.com
+description: Ma modeste contribution à l'histoire de la pensée.
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: JLeuwen
+github_username:  JohannGillium
+
+# Build settings
+markdown: kramdown
+
+collections:
+  Riverside:
+     title: The Riverside Church
+     output: true
+     description: A collection of materials related to the founding, construction and early years of the Riverside Church.
+  Lion:
+     title: Lion Brewery
+     output: true
+     description: Materials relating to the Lion Brewery of Morningside Heights.
+  Cathedral:
+     title: Cathedral of St. John the Divine
+     output: true
+     description: A collection of published images and documents relating to the early architectural history (1887-1913) of the Cathedral of Saint John the Divine.
+     
