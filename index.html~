@@ -7,7 +7,7 @@ title: Home
 
   <h1 class="page-heading">Introduction</h1>
 <p> 
-<a href="{{site.baseurl}}/search_travail.html">Chercher dans la base</a>
+<a href="{{site.baseurl}}/search.html">Chercher dans la base</a>
 
  <p><a href="{{site.baseurl}}/collections.html">Browse collections</a></p>
  

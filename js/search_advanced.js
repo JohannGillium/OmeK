@@ -91,15 +91,33 @@ index.addDoc(doc{{count}});
 {% assign count = count | plus: 1 %}{% endfor %}{% endunless %}
 
  {% endfor %} ]
-
  
+ 
+ //Ci-dessous script pour la recherche avancée 
+ 
+  
  $(document).ready(function() {
-  $('input#search').on('keyup', function () {
+  $('input#submit_search_advanced').on('click', function () {
+  //On récupère la valeur du mot clef entré par l'utilisateur
+  	var keyword = $("#keyword-search").val();
+ //On récupère la valeur du Dropdown des champs DublinCore
+ var fieldDC = $("#-optgroup-Dublin Core").text();
 	var resultdiv = $('#results');
 	var query = $(this).val();
  
   //The search is then launched on the index built with Lunr
-  var result = index.search(query);
+  
+  var result = index.search(query, {
+    fields: {
+        fieldDC: keyword
+        $('input[type="checkbox"]').each(function() {
+    if ($(this).is(":checked")) {
+        type: this.name 
+    }
+        })
+    }
+});
+
   resultdiv.empty();
   resultdiv.append('<p class="">Found '+result.length+' result(s)</p>');
   //Loop through, match, and add results
@@ -113,9 +131,12 @@ index.addDoc(doc{{count}});
  
  //below, code section to have the search engine working on different fields
  
- index.search("Oracle database", {
+ var field1 =
+ var field2 =
+ 
+ index.search(query, {
     fields: {
-        title: {boost: 2},
-        body: {boost: 1}
+        field1: {boost: 2},
+        field2: {boost: 1}
     }
 });
