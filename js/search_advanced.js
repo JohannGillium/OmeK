@@ -98,45 +98,41 @@ index.addDoc(doc{{count}});
   
  $(document).ready(function() {
   $('input#submit_search_advanced').on('click', function () {
-  //On récupère la valeur du mot clef entré par l'utilisateur
-  	var keyword = $("#keyword-search").val();
- //On récupère la valeur du Dropdown des champs DublinCore
- var fieldDC = $("#-optgroup-Dublin Core").text();
-	var resultdiv = $('#results');
-	var query = $(this).val();
- 
-  //The search is then launched on the index built with Lunr
-  
-  var result = index.search(query, {
+var query = $("input#keyword-search").val();
+var dropdown = $('#optgroupDublinCore option:selected').text();
+console.log(dropdown);
+alert(query);
+alert(dropdown);
+if (typeof dropdown !='undefined' && dropdown == 'Title') {
+	alert("dans la boucle");
+	 var result = index.search(query, {
     fields: {
-        fieldDC: keyword
-        $('input[type="checkbox"]').each(function() {
-    if ($(this).is(":checked")) {
-        type: this.name 
-    }
-        })
+        title: {boost: 2},    
     }
 });
-
+  alert(result);
+  var resultdiv = $('#results');
   resultdiv.empty();
   resultdiv.append('<p class="">Found '+result.length+' result(s)</p>');
-  //Loop through, match, and add results
+
   for (var item in result) {
 	var ref = result[item].ref;
+	alert(ref);
     var searchitem = '<div class="result"><p><a href="{{ site.baseurl }}'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
     resultdiv.append(searchitem);
    }
-  });
-});
+
+}})});
+
+	
  
- //below, code section to have the search engine working on different fields
+  //The search is then launched on the index built with Lunr
+  
  
- var field1 =
- var field2 =
+
+
+        
  
- index.search(query, {
-    fields: {
-        field1: {boost: 2},
-        field2: {boost: 1}
-    }
-});
+  
+ 
+ 

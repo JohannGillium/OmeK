@@ -4,7 +4,6 @@ layout: default
 
 
 
-<form action="get" id="site_search"><input id="search" type="text"></input></form>
 <div id="results"></div>
 <ul id="search_results"></ul>
 
@@ -64,7 +63,7 @@ Search only these record types :<br/><input type="checkbox" name="record_type" v
     <option value="47">Rights</option>
     <option value="48">Source</option>
     <option value="49">Subject</option>
-    <option value="50">title</option>
+    <option value="50">Title</option>
     <option value="51">Type</option>
     </optgroup>
     <optgroup id="-optgroup-Item Type Metadata" label="Item Type Metadata">
