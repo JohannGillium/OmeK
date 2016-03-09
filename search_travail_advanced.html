@@ -4,19 +4,7 @@ layout: default
 
 
 
-<div id="results"></div>
-<ul id="search_results"></ul>
 
-
-<div id="form_advance">
- <form action="get" id="site_search"><input id="search" type="text"></input><button id="search" type="button">Search</button><br/>Search using this query type :<br/>
- <input type="checkbox" name="record_type" value="Keyword">Keyword<br/>
- <input type="checkbox" name="record_type" value="Boolean">Boolean<br/>
- <input type="checkbox" name="record_type" value="Exact_match">Exact Match<br/>
-Search only these record types :<br/><input type="checkbox" name="record_type" value="Item">Item<br/><input type="checkbox" name="record_type" value="File">File<br/><input type="checkbox" name="record_type" value="Collection">Collection<br/><input type="checkbox" name="record_type" value="Exhibit">Exhibit<br/></form>
- <span><a href="{{ site.baseurl }}/asearch.html">Advanced search</a></span>
- 
-</ul>         </div>
 
         
     <div id="content">
@@ -24,21 +12,9 @@ Search only these record types :<br/><input type="checkbox" name="record_type" v
 
 <h1>Search Items</h1>
 
-<nav class="items-nav navigation secondary-nav">
-    <ul class="navigation">
-    <li>
-        <a href="/items/browse">Browse All</a>
-    </li>
-    <li>
-        <a href="/items/tags">Browse by Tag</a>
-    </li>
-    <li class="active">
-        <a href="/items/search">Search Items</a>
-    </li>
-</ul></nav>
 
 
-<form id="advanced-search-form" action="/items/browse" method="GET">
+<form id="advanced-search-form">
     <div id="search-keywords" class="field">
         <label for="keyword-search">Search for Keywords</label>        <div class="inputs">
         <input type="text" name="search" id="keyword-search" value="" size="40">        </div>
@@ -47,7 +23,7 @@ Search only these record types :<br/><input type="checkbox" name="record_type" v
         <div class="label">Narrow by Specific Fields</div>
         <div class="inputs">
                     <div class="search-entry">
-                <select name="advanced[0][element_id]" id="" title="Search Field" class="advanced-search-element">
+                <select title="Search Field" class="advanced-search-element">
     <option value="">Select Below </option>
     <optgroup id="optgroupDublinCore" label="Dublin Core">
     <option value="37">Contributor</option>
@@ -65,137 +41,8 @@ Search only these record types :<br/><input type="checkbox" name="record_type" v
     <option value="49">Subject</option>
     <option value="50">Title</option>
     <option value="51">Type</option>
-    </optgroup>
-    <optgroup id="-optgroup-Item Type Metadata" label="Item Type Metadata">
-    <option value="22">BCC</option>
-    <option value="36">Bibliography</option>
-    <option value="35">Biographical Text</option>
-    <option value="31">Birth Date</option>
-    <option value="32">Birthplace</option>
-    <option value="15">Bit Rate/Frequency</option>
-    <option value="21">CC</option>
-    <option value="12">Compression</option>
-    <option value="33">Death Date</option>
-    <option value="14">Director</option>
-    <option value="11">Duration</option>
-    <option value="17">Email Body</option>
-    <option value="29">Event Type</option>
-    <option value="19">From</option>
-    <option value="3">Interviewee</option>
-    <option value="2">Interviewer</option>
-    <option value="27">Lesson Plan Text</option>
-    <option value="6">Local URL</option>
-    <option value="4">Location</option>
-    <option value="26">Materials</option>
-    <option value="23">Number of Attachments</option>
-    <option value="25">Objectives</option>
-    <option value="34">Occupation</option>
-    <option value="7">Original Format</option>
-    <option value="30">Participants</option>
-    <option value="10">Physical Dimensions</option>
-    <option value="13">Producer</option>
-    <option value="52">Scale</option>
-    <option value="24">Standards</option>
-    <option value="18">Subject Line</option>
-    <option value="1">Text</option>
-    <option value="16">Time Summary</option>
-    <option value="20">To</option>
-    <option value="5">Transcription</option>
-    <option value="28">URL</option>
-    <option value="53">Video iFrame</option>
-    </optgroup>
-</select><select name="advanced[0][type]" id="" title="Search Type" class="advanced-search-type">
-    <option value="" selected="selected">Select Below </option>
-    <option value="contains">contains</option>
-    <option value="does not contain">does not contain</option>
-    <option value="is exactly">is exactly</option>
-    <option value="is empty">is empty</option>
-    <option value="is not empty">is not empty</option>
-</select><input type="text" name="advanced[0][terms]" id="" value="" size="20" title="Search Terms" class="advanced-search-terms">                <button type="button" class="remove_search" disabled="disabled" style="display: none;">Remove field</button>
-            </div>
-                </div>
-        <button type="button" class="add_search">Add a Field</button>
-    </div>
-
-    <div id="search-by-range" class="field">
-        <label for="range">Search by a range of ID#s (example: 1-4, 156, 79)</label>        <div class="inputs">
-        <input type="text" name="range" id="range" value="" size="40">        </div>
-    </div>
-
-    <div class="field">
-        <label for="collection-search">Search By Collection</label>        <div class="inputs">
-        <select name="collection" id="collection-search">
-    <option value="">Select Below </option>
-    <option value="3">Bloomingdale Asylum</option>
-    <option value="1">Cathedral of St. John the Divine</option>
-    <option value="5">Fire Engine Company No. 47</option>
-    <option value="10">Interborough Rapid Transit Company (IRT) Subway</option>
-    <option value="7">Leake and Watts Orphan Home</option>
-    <option value="4">Lion Brewery</option>
-    <option value="11">Riverside Park</option>
-    <option value="2">St. Luke's Hospital</option>
-    <option value="12">The Riverside Church</option>
-    <option value="14">Videbimus Lumus: Butler Library Mural</option>
-</select>        </div>
-    </div>
-
-    <div class="field">
-        <label for="item-type-search">Search By Type</label>        <div class="inputs">
-        <select name="type" id="item-type-search">
-    <option value="">Select Below </option>
-    <option value="14">Dataset</option>
-    <option value="9">Email</option>
-    <option value="8">Event</option>
-    <option value="11">Hyperlink</option>
-    <option value="13">Interactive Resource</option>
-    <option value="10">Lesson Plan</option>
-    <option value="18">Map</option>
-    <option value="3">Moving Image</option>
-    <option value="4">Oral History</option>
-    <option value="12">Person</option>
-    <option value="15">Physical Object</option>
-    <option value="16">Service</option>
-    <option value="17">Software</option>
-    <option value="5">Sound</option>
-    <option value="6">Still Image</option>
-    <option value="19">Streaming Video</option>
-    <option value="1">Text</option>
-</select>        </div>
-    </div>
-
-    
-    <div class="field">
-        <label for="tag-search">Search By Tags</label>        <div class="inputs">
-        <input type="text" name="tags" id="tag-search" value="" size="40">        </div>
-    </div>
-
-
-    
-    <div class="field">
-        <label for="featured">Featured/Non-Featured</label>        <div class="inputs">
-        <select name="featured" id="featured">
-    <option value="">Select Below </option>
-    <option value="1">Only Featured Items</option>
-    <option value="0">Only Non-Featured Items</option>
-</select>        </div>
-    </div>
-
-    <div class="field"><div class="two columns alpha"><label for="exhibit">Search by Exhibit</label></div><div class="five columns omega inputs"><select name="exhibit" id="exhibit">
-    <option value="">Select Below </option>
-    <option value="4">St. Luke's Hospital </option>
-    <option value="6">Riverside Park</option>
-    <option value="12">The Riverside Church</option>
-    <option value="13">Engine Company No. 47</option>
-    <option value="20">Cathedral of St. John the Divine: Recovering the Vision of Heins and La Farge</option>
-    <option value="22">The Lion Brewery: 90 years of social history</option>
-    <option value="23">Leake and Watts Orphan House</option>
-    <option value="24">Videbimus Lumen: Butler Library Mural</option>
-    <option value="27">The Opening of the IRT Subway</option>
-    <option value="28">Bloomingdale Asylum</option>
-</select></div></div>    <div>
-                <input type="submit" class="submit" name="submit_search" id="submit_search_advanced" value="Search for items">
-    </div>
-</form>
+    </optgroup></select></div></div>    <div><input type="submit" class="submit" name="submit_search" id="submit_search_advanced" value="Search for items"></form>
+   
  
 <div id="results"></div>
 <ul id="search_results"></ul>

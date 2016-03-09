@@ -359,13 +359,13 @@ if (typeof dropdown !='undefined' && dropdown == 'Title') {
 });
   alert(result);
   var resultdiv = $('#results');
-  resultdiv.empty();
   resultdiv.append('<p class="">Found '+result.length+' result(s)</p>');
 
   for (var item in result) {
 	var ref = result[item].ref;
 	alert(ref);
     var searchitem = '<div class="result"><p><a href="'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
+    alert(searchitem);
     resultdiv.append(searchitem);
    }
 
