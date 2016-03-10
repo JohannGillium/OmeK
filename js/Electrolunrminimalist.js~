@@ -51,6 +51,7 @@ var doc{{count}} = {
   "subject" : {{ doc.subject | jsonify }},
   "description" : {{ doc.description | jsonify }},
   "creator" : {{ doc.creator | jsonify }},
+  "body" : {{ doc.body | jsonify }}
   "type" : "item"
 }
 
@@ -91,12 +92,16 @@ index.addDoc(doc{{count}});
 {% assign count = count | plus: 1 %}{% endfor %}{% endunless %}
 
  {% endfor %} ]
-
  
- $(document).ready(function() {
-  $('button#search').on('keyup', function () {
+ 
+ //Ci-dessous script pour la recherche avancée 
+
+$(document).ready(function() {
+//  $('input#search').on('keyup', function () {
+$('button#submit_search').click(function () {
+	var query = $('input#search').val();
+	alert(query);
 	var resultdiv = $('#results');
-	var query = $(this).val();
  
   //The search is then launched on the index built with Lunr
   var result = index.search(query);
@@ -105,20 +110,8 @@ index.addDoc(doc{{count}});
   //Loop through, match, and add results
   for (var item in result) {
 	var ref = result[item].ref;
-    var searchitem = '<div class="result"><p><a href="{{ site.baseurl }}'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
+    var searchitem = '<div class="result"><p><a href="{{ site.baseurl }}'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'</p></div>';
     resultdiv.append(searchitem);
    }
   });
-});
- 
- //below, code section to have the search engine working on different fields
- 
- var field1 =
- var field2 =
- 
- index.search(query, {
-    fields: {
-        field1: {boost: 2},
-        field2: {boost: 1}
-    }
 });

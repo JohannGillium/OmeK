@@ -113,9 +113,12 @@ index.addDoc(doc{{count}});
  
  //below, code section to have the search engine working on different fields
  
- index.search("Oracle database", {
+ var field1 =
+ var field2 =
+ 
+ index.search(query, {
     fields: {
-        title: {boost: 2},
-        body: {boost: 1}
+        field1: {boost: 2},
+        field2: {boost: 1}
     }
 });

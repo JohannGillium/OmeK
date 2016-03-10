@@ -2,16 +2,16 @@
 layout: default
 ---
 
-
-
-<form action="get" id="site_search"><input id="search" type="text"></input></form>
+<form id="site_search"><input id="search" type="text"></input></form>
+<button type="button" form="site_search" value="submit" id="submit_search">Submit</button>
 <div id="results"></div>
 <ul id="search_results"></ul>
-<p><a href="">Advanced search</a></p>
+
+<p><a href="{{site.baseurl}}/search_travail_advanced.html">Recherche avancée</a></p>
 
 <script src="{{site.baseurl}}/js/elasticlunr.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="{{site.baseurl}}/js/elasticlunr_javascript.js"></script>
+<script src="{{site.baseurl}}/js/Electrolunrminimalist.js"></script>
 
 
 

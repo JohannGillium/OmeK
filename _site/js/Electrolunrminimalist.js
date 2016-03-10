@@ -79,6 +79,7 @@ var doc3 = {
   "subject" : "Riverside church (New York, N.Y.)",
   "description" : "This photograph documents the construction of the church, notably the modern steel framework that would be encased by stone to preserve the architects' Gothic vision.",
   "creator" : "George L. Balgue",
+  "body" : null,
   "type" : "item"
 }
 
@@ -99,6 +100,7 @@ var doc4 = {
   "subject" : "College campuses",
   "description" : "Cathedral Heights",
   "creator" : null,
+  "body" : null,
   "type" : "item"
 }
 
@@ -119,6 +121,7 @@ var doc5 = {
   "subject" : "Cathedral of St. John the Divine (New York, N.Y.)",
   "description" : "An illustrated historical narrative overview of the cathedral. Includes its charter; the names of trustees,  officers, and staff; as well as accounts of the Choir School, the Cathedral League, and other affiliated groups. Covers the earliest planning, the selection of architects, and the development of the cathedral as a building and an institution. Access the document in the HathiTrust Digital Library here.\n",
   "creator" : "Episcopal Church. Diocese of New York. Cathedral League",
+  "body" : null,
   "type" : "item"
 }
 
@@ -132,6 +135,7 @@ var doc6 = {
   "subject" : null,
   "description" : null,
   "creator" : null,
+  "body" : null,
   "type" : "item"
 }
 
@@ -145,6 +149,7 @@ var doc7 = {
   "subject" : null,
   "description" : null,
   "creator" : null,
+  "body" : null,
   "type" : "item"
 }
 
@@ -158,6 +163,7 @@ var doc8 = {
   "subject" : null,
   "description" : null,
   "creator" : null,
+  "body" : null,
   "type" : "item"
 }
 
@@ -171,6 +177,7 @@ var doc9 = {
   "subject" : null,
   "description" : null,
   "creator" : null,
+  "body" : null,
   "type" : "item"
 }
 
@@ -184,6 +191,7 @@ var doc10 = {
   "subject" : null,
   "description" : null,
   "creator" : null,
+  "body" : null,
   "type" : "item"
 }
 
@@ -338,12 +346,16 @@ index.addDoc(doc10);
     
 
   ]
-
  
- $(document).ready(function() {
-  $('button#search').on('keyup', function () {
+ 
+ //Ci-dessous script pour la recherche avancée 
+
+$(document).ready(function() {
+//  $('input#search').on('keyup', function () {
+$('button#submit_search').click(function () {
+	var query = $('input#search').val();
+	alert(query);
 	var resultdiv = $('#results');
-	var query = $(this).val();
  
   //The search is then launched on the index built with Lunr
   var result = index.search(query);
@@ -352,20 +364,8 @@ index.addDoc(doc10);
   //Loop through, match, and add results
   for (var item in result) {
 	var ref = result[item].ref;
-    var searchitem = '<div class="result"><p><a href="'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
+    var searchitem = '<div class="result"><p><a href="'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'</p></div>';
     resultdiv.append(searchitem);
    }
   });
-});
- 
- //below, code section to have the search engine working on different fields
- 
- var field1 =
- var field2 =
- 
- index.search(query, {
-    fields: {
-        field1: {boost: 2},
-        field2: {boost: 1}
-    }
 });

@@ -117,7 +117,7 @@ var doc5 = {
   "id" : 5,
   "title" : "Cathedral Church of Saint John the Divine",
   "subject" : "Cathedral of St. John the Divine (New York, N.Y.)",
-  "description" : "An illustrated historical overview of the cathedral. Includes its charter; the names of trustees,  officers, and staff; as well as accounts of the Choir School, the Cathedral League, and other affiliated groups. Covers the earliest planning, the selection of architects, and the development of the cathedral as a building and an institution. Access the document in the HathiTrust Digital Library here.\n",
+  "description" : "An illustrated historical narrative overview of the cathedral. Includes its charter; the names of trustees,  officers, and staff; as well as accounts of the Choir School, the Cathedral League, and other affiliated groups. Covers the earliest planning, the selection of architects, and the development of the cathedral as a building and an institution. Access the document in the HathiTrust Digital Library here.\n",
   "creator" : "Episcopal Church. Diocese of New York. Cathedral League",
   "type" : "item"
 }
@@ -344,21 +344,15 @@ index.addDoc(doc10);
  
   
  $(document).ready(function() {
-  $('input#submit_search_advanced').on('click', function () {
-var query = $("input#keyword-search").val();
-var dropdown = $('#optgroupDublinCore option:selected').text();
-console.log(dropdown);
-alert(query);
-alert(dropdown);
-if (typeof dropdown !='undefined' && dropdown == 'Title') {
-	alert("dans la boucle");
-	 var result = index.search(query, {
+  $('button#search').on('click', function () {
+  var query = $("input#keyword-search").val();
+  var dropdown = $('#optgroupDublinCore option:selected').text();
+  var result = index.search(query, {
     fields: {
         title: {boost: 2},    
-    }
-});
-  alert(result);
-  var resultdiv = $('#results');
+    }});
+    var resultdiv = $('#results');
+    alert(result.length);
   resultdiv.append('<p class="">Found '+result.length+' result(s)</p>');
 
   for (var item in result) {
@@ -367,9 +361,7 @@ if (typeof dropdown !='undefined' && dropdown == 'Title') {
     var searchitem = '<div class="result"><p><a href="'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
     alert(searchitem);
     resultdiv.append(searchitem);
-   }
-
-}})});
+  }})})
 
 	
  

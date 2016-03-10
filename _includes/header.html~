@@ -10,7 +10,7 @@
     
  <div id="form">
  <form action="get" id="site_search"><input id="search" type="text"></input><button id="search" type="button">Search</button></form>
- <span><a href="{{ site.baseurl }}/asearch.html">Adanced search</a></span>
+ <span><a href="{{ site.baseurl }}/search.html">Advanced search</a></span>
 <div id="results"></div>
 <ul id="search_results"></ul>
 <script src="{{site.baseurl}}/js/lunr.min.js"></script>

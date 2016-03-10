@@ -338,34 +338,48 @@ index.addDoc(doc10);
     
 
   ]
-
  
+ 
+ //Ci-dessous script pour la recherche avancée 
+ 
+  
  $(document).ready(function() {
-  $('button#search').on('keyup', function () {
-	var resultdiv = $('#results');
-	var query = $(this).val();
- 
-  //The search is then launched on the index built with Lunr
-  var result = index.search(query);
-  resultdiv.empty();
-  resultdiv.append('<p class="">Found '+result.length+' result(s)</p>');
-  //Loop through, match, and add results
-  for (var item in result) {
-	var ref = result[item].ref;
-    var searchitem = '<div class="result"><p><a href="'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
-    resultdiv.append(searchitem);
-   }
-  });
-});
- 
- //below, code section to have the search engine working on different fields
- 
- var field1 =
- var field2 =
- 
- index.search(query, {
+  $('input#submit_search_advanced').on('click', function () {
+var query = $("input#keyword-search").val();
+var dropdown = $('#optgroupDublinCore option:selected').text();
+console.log(dropdown);
+alert(query);
+alert(dropdown);
+if (typeof dropdown !='undefined' && dropdown == 'Title') {
+	alert("dans la boucle");
+	 var result = index.search(query, {
     fields: {
-        field1: {boost: 2},
-        field2: {boost: 1}
+        title: {boost: 2},    
     }
 });
+  alert(result);
+  var resultdiv = $('#results');
+  resultdiv.append('<p class="">Found '+result.length+' result(s)</p>');
+
+  for (var item in result) {
+	var ref = result[item].ref;
+	alert(ref);
+    var searchitem = '<div class="result"><p><a href="'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
+    alert(searchitem);
+    resultdiv.append(searchitem);
+   }
+
+}})});
+
+	
+ 
+  //The search is then launched on the index built with Lunr
+  
+ 
+
+
+        
+ 
+  
+ 
+ 

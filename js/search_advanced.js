@@ -97,21 +97,15 @@ index.addDoc(doc{{count}});
  
   
  $(document).ready(function() {
-  $('input#submit_search_advanced').on('click', function () {
-var query = $("input#keyword-search").val();
-var dropdown = $('#optgroupDublinCore option:selected').text();
-console.log(dropdown);
-alert(query);
-alert(dropdown);
-if (typeof dropdown !='undefined' && dropdown == 'Title') {
-	alert("dans la boucle");
-	 var result = index.search(query, {
+  $('button#search').on('click', function () {
+  var query = $("input#keyword-search").val();
+  var dropdown = $('#optgroupDublinCore option:selected').text();
+  var result = index.search(query, {
     fields: {
         title: {boost: 2},    
-    }
-});
-  alert(result);
-  var resultdiv = $('#results');
+    }});
+    var resultdiv = $('#results');
+    alert(result.length);
   resultdiv.append('<p class="">Found '+result.length+' result(s)</p>');
 
   for (var item in result) {
@@ -120,9 +114,7 @@ if (typeof dropdown !='undefined' && dropdown == 'Title') {
     var searchitem = '<div class="result"><p><a href="{{ site.baseurl }}'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
     alert(searchitem);
     resultdiv.append(searchitem);
-   }
-
-}})});
+  }})})
 
 	
  
