@@ -1,0 +1,9 @@
+Hi, @weixsong, it works perfectly, thanks. I should have thought of using .index.
+
+I'm struggling yesterday with another issue, because the fieldSearch function expects a config parameter, and would not take automatically - as the search function does - the default configuration. So when I use : 
+
+`var result = index.fieldSearch(queryTokens, fieldName); `
+
+I've got this error : "Uncaught TypeError: Cannot read property 'title' of undefined" with a link to this line of elasticlunr (def of fieldSearch function) :  var booleanType = config[fieldName].bool;
+
+To fix this, I tried to provide a configuration as parameter to the searcField function. Like this : 

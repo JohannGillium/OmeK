@@ -4,6 +4,7 @@
 
 //Fichier du 6 mars 2016 : objectif de créer avec elasticlunr un index suffisamment puissant pour faire des recherches avancées.
 // 10 mars 2016 : cette version fonctionne très bien, il nous faut donc la garder précieusement et la chérir. Je fais donc une copie pour expérimenter avec mon histoire de requêtes dont les champs sont sélectionnés d'après les choix de l'utilisateur
+//Ce fichier search_advanced2 est là pour servir d'expérimentation concernant la question des requêtes dynamiques
 
 
 // console.log( jQuery.type(index) );
@@ -100,22 +101,41 @@ index.addDoc(doc{{count}});
  $(document).ready(function() {
   $('button#search').on('click', function () {
   var query = $("input#keyword-search").val();
-  var dropdown = $('#optgroupDublinCore option:selected').text();
-  var result = index.search(query, {
-    fields: {
-        title: {boost: 2},    
-    }});
+  alert(query);
+  var fieldName = $('#optgroupDublinCore option:selected').text();
+  alert(fieldName);
+  var userConfig = null;
+  var configStr = null;
+  if (userConfig != null) {
+  configStr = JSON.stringify(userConfig);
+  }
+  //var config = {fields: {title: {boost: 1, bool: "OR", expand: false }}};
+ var config = new elasticlunr.Configuration(configStr, index.getFields()).get();
+  //var config = configuration.buildDefaultConfig(fieldName);
+  var queryTokens = index.pipeline.run(elasticlunr.tokenizer(query));
+  alert(queryTokens);
+  alert(fieldName);
+  alert('toto');
+  var result = index.fieldSearch(queryTokens, fieldName, config); 
+  console.log(result);
     var resultdiv = $('#results');
-    alert(result.length);
+    alert('attention');
   resultdiv.append('<p class="">Found '+result.length+' result(s)</p>');
-
-  for (var item in result) {
-	var ref = result[item].ref;
-	alert(ref);
+  alert(Object.keys(result));
+  var keys = [];
+  for (var k in result) keys.push(k);
+  alert("test");
+  console.log(keys);
+  arrayLength = keys.length
+  for (var i = 0; i < arrayLength; i++) {
+  	alert("dans la boucle");
+  	alert(keys[i]);
+  	var ref = keys[i];
+	//var ref = result[item].ref;
     var searchitem = '<div class="result"><p><a href="{{ site.baseurl }}'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
-    alert(searchitem);
     resultdiv.append(searchitem);
-  }})})
+  }})
+  })
 
 	
  

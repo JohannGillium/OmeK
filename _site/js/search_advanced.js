@@ -1,4 +1,5 @@
 //Fichier du 6 mars 2016 : objectif de créer avec elasticlunr un index suffisamment puissant pour faire des recherches avancées.
+// 10 mars 2016 : cette version fonctionne très bien, il nous faut donc la garder précieusement et la chérir. Je fais donc une copie pour expérimenter avec mon histoire de requêtes dont les champs sont sélectionnés d'après les choix de l'utilisateur
 
 
 // console.log( jQuery.type(index) );
@@ -358,7 +359,7 @@ index.addDoc(doc10);
   for (var item in result) {
 	var ref = result[item].ref;
 	alert(ref);
-    var searchitem = '<div class="result"><p><a href="'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
+    var searchitem = '<div class="result"><p><a href="/omekyll'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
     alert(searchitem);
     resultdiv.append(searchitem);
   }})})

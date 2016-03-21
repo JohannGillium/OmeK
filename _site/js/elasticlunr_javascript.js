@@ -352,7 +352,7 @@ index.addDoc(doc10);
   //Loop through, match, and add results
   for (var item in result) {
 	var ref = result[item].ref;
-    var searchitem = '<div class="result"><p><a href="'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
+    var searchitem = '<div class="result"><p><a href="/omekyll'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
     resultdiv.append(searchitem);
    }
   });

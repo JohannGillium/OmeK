@@ -364,7 +364,7 @@ $('button#submit_search').click(function () {
   //Loop through, match, and add results
   for (var item in result) {
 	var ref = result[item].ref;
-    var searchitem = '<div class="result"><p><a href="'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'</p></div>';
+    var searchitem = '<div class="result"><p><a href="/omekyll'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'</p></div>';
     resultdiv.append(searchitem);
    }
   });
