@@ -15,6 +15,8 @@ layout: default
 
 
 <form id="advanced-search-form">
+<div id="form_fields">
+<div id="field1>
     <div id="search-keywords" class="field">
         <label for="keyword-search">Search for Keywords</label>        <div class="inputs">
         <input type="text" name="search" id="keyword-search" value="" size="40">        </div>
@@ -26,27 +28,31 @@ layout: default
                 <select title="Search Field" class="advanced-search-element">
     <option value="">Select Below </option>
     <optgroup id="optgroupDublinCore" label="Dublin Core">
-    <option value="37">Contributor</option>
-    <option value="38">Coverage</option>
+    <option value="37">contributor</option>
+    <option value="38">coverage</option>
     <option value="39">creator</option>
-    <option value="40">Date</option>
-    <option value="41">Description</option>
-    <option value="42">Format</option>
-    <option value="43">Identifier</option>
-    <option value="44">Language</option>
-    <option value="45">Publisher</option>
-    <option value="46">Relation</option>
-    <option value="47">Rights</option>
-    <option value="48">Source</option>
-    <option value="49">Subject</option>
+    <option value="40">date</option>
+    <option value="41">description</option>
+    <option value="42">format</option>
+    <option value="43">identifier</option>
+    <option value="44">language</option>
+    <option value="45">publisher</option>
+    <option value="46">relation</option>
+    <option value="47">rights</option>
+    <option value="48">source</option>
+    <option value="49">subject</option>
     <option value="50">title</option>
-    <option value="51">Type</option>
-    </optgroup></select></div></div>    <div><button type="button" id="search">Search</button></form>
+    <option value="51">type</option>
+    </optgroup></select></div></div></div>
+    </div>
+    
+    
+       <div><button type="button" id="add_field">Add field</button><button type="button" id="search">Search</button></form>
    
  
 <div id="results"></div>
 <ul id="search_results"></ul>
-<script src="{{site.baseurl}}/js/elasticlunr.min.js"></script>
+<script src="{{site.baseurl}}/js/elasticlunr.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="{{site.baseurl}}/js/search_advanced2.js"></script>
  </div>

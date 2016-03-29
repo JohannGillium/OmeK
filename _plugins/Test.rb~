@@ -1,8 +1,0 @@
-module Jekyll
-  module LunrJsSearch
-    class Indexer < Jekyll::Generator
-    def initialize(config = {})
-
-@lunr_path = File.exist?(gem_lunr) ? gem_lunr : File.join(@js_dir, File.basename(gem_lunr))
-
-end
