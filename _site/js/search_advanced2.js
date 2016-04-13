@@ -353,6 +353,7 @@ index.addDoc(doc10);
   alert(fieldName);
   var userConfig = null;
   var configStr = null;
+  var keys = [];
   if (userConfig != null) {
   configStr = JSON.stringify(userConfig);
   }
@@ -369,8 +370,11 @@ index.addDoc(doc10);
     alert('attention');
   resultdiv.append('<p class="">Found '+result.length+' result(s)</p>');
   alert(Object.keys(result));
-  var keys = [];
+  //var keys = [];
+  //Below, for each query we add the result to the keys array
   for (var k in result) keys.push(k);
+  
+  
   alert("test");
   console.log(keys);
   arrayLength = keys.length
