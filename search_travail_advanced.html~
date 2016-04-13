@@ -16,7 +16,7 @@ layout: default
 
 <form id="advanced-search-form">
 <div id="form_fields">
-<div id="field1>
+<div class="fieldwrapper" id="field1">
     <div id="search-keywords" class="field">
         <label for="keyword-search">Search for Keywords</label>        <div class="inputs">
         <input type="text" name="search" id="keyword-search" value="" size="40">        </div>
@@ -47,7 +47,7 @@ layout: default
     </div>
     
     
-       <div><input type="button" class="add" id="add" value="Add a field"></input><input type="button" id="add">Search</button></form>
+       <div><input type="button" class="add" id="add" value="Add a field"></input><button type="button" id="search">Search</button></form>
    
  
 <div id="results"></div>
