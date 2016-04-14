@@ -19,7 +19,7 @@ layout: default
 <div class="fieldwrapper" id="field1">
     <div id="search-keywords" class="field">
         <label for="keyword-search">Search for Keywords</label>        <div class="inputs">
-        <input type="text" name="search" id="keyword-search" value="" size="40">        </div>
+        <input type="text" name="search" class="keyword-search" value="" size="40">        </div>
     </div>
     <div id="search-narrow-by-fields" class="field">
         <div class="label">Narrow by Specific Fields</div>

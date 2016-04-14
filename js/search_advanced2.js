@@ -100,8 +100,25 @@ index.addDoc(doc{{count}});
   
  $(document).ready(function() {
   $('button#search').on('click', function () {
-  var query = $("input#keyword-search").val();
+ // var query = $("input#keyword-search").val();
+ // alert(query);
+  var keys = [];
+  $('div.fieldwrapper').each(function() {
+  var query = $(this).find('input.keyword-search').val();
+  var fieldName = $(this).find('#optgroupDublinCore option:selected').text()
   alert(query);
+  alert (fieldName);
+  var config = new elasticlunr.Configuration(configStr, index.getFields()).get();
+  var queryTokens = index.pipeline.run(elasticlunr.tokenizer(query));
+  var result = index.fieldSearch(queryTokens, fieldName, config); 
+  array_result = [];
+  for (var k in result) array_result.push(k);
+  alert(array_result);
+  keys.push(array_result);
+  alert(keys);
+  })
+  
+  
   var fieldName = $('#optgroupDublinCore option:selected').text();
   alert(fieldName);
   var userConfig = null;
