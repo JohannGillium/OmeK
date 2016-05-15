@@ -120,7 +120,7 @@ var doc5 = {
   "title" : "Cathedral Church of Saint John the Divine",
   "subject" : "Cathedral of St. John the Divine (New York, N.Y.)",
   "description" : "An illustrated historical narrative overview of the cathedral. Includes its charter; the names of trustees,  officers, and staff; as well as accounts of the Choir School, the Cathedral League, and other affiliated groups. Covers the earliest planning, the selection of architects, and the development of the cathedral as a building and an institution. Access the document in the HathiTrust Digital Library here.\n",
-  "creator" : "Episcopal Church. Diocese of New York. Cathedral League",
+  "creator" : "Balgue",
   "type" : "item"
 }
 
@@ -347,13 +347,11 @@ index.addDoc(doc10);
   
  $(document).ready(function() {
   $('button#search').on('click', function () {
-    var keys = [];
+    resultats = [];
+    resultdiv = $('#results');
     $(".fieldwrapper").each(function() {
-        alert('field');
         var query = $(this).find('input.keyword-search').val();
-        alert(query);
         var fieldName = $(this).find('optgroup#optgroupDublinCore option:selected').text();
-        alert(fieldName);
         var userConfig = null;
         var configStr = null;
         if (userConfig != null) {
@@ -363,32 +361,38 @@ index.addDoc(doc10);
         var config = new elasticlunr.Configuration(configStr, index.getFields()).get();
         //var config = configuration.buildDefaultConfig(fieldName);
         var queryTokens = index.pipeline.run(elasticlunr.tokenizer(query));
-        alert(queryTokens);
-        alert(fieldName);
-        alert('toto');
         var result = index.fieldSearch(queryTokens, fieldName, config); 
         console.log(result);
-        var resultdiv = $('#results');
         alert('attention');
         resultdiv.append('<p class="">Found '+result.length+' result(s)</p>');
         alert(Object.keys(result));
-        //var keys = [];
+        keys = [];
         //Below, for each query we add the result to the keys array
         for (var k in result) keys.push(k);
-  
-  
-            alert("test");
-  console.log(keys);
-  arrayLength = keys.length
-  for (var i = 0; i < arrayLength; i++) {
-  	alert("dans la boucle");
-  	alert(keys[i]);
-  	var ref = keys[i];
-	//var ref = result[item].ref;
-    var searchitem = '<div class="result"><p><a href="/omekyll'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
-    resultdiv.append(searchitem);
-  }})
-  })})
+        alert("test");
+        console.log(keys);
+        arrayLength = keys.length
+        resultats.push(keys);
+        })
+          console.log(resultats);
+          var final = resultats.shift().filter(function(v) {
+                return resultats.every(function(a) {
+                return a.indexOf(v) !== -1;
+                });
+                });
+          console.log(final);
+          for (var i = 0; i < arrayLength; i++) {
+  	        alert("dans la boucle");
+  	        alert(final[i]);
+  	        var ref = final[i];
+	        //var ref = result[item].ref;
+            var searchitem = '<div class="result"><p><a href="/omekyll'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
+            resultdiv.append(searchitem);
+            }
+        });
+
+
+  })
 
 	
  

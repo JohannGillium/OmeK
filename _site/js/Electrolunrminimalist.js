@@ -120,7 +120,7 @@ var doc5 = {
   "title" : "Cathedral Church of Saint John the Divine",
   "subject" : "Cathedral of St. John the Divine (New York, N.Y.)",
   "description" : "An illustrated historical narrative overview of the cathedral. Includes its charter; the names of trustees,  officers, and staff; as well as accounts of the Choir School, the Cathedral League, and other affiliated groups. Covers the earliest planning, the selection of architects, and the development of the cathedral as a building and an institution. Access the document in the HathiTrust Digital Library here.\n",
-  "creator" : "Episcopal Church. Diocese of New York. Cathedral League",
+  "creator" : "Balgue",
   "body" : null,
   "type" : "item"
 }
