@@ -240,6 +240,7 @@ index.addDoc(doc10);
   "subject": "Riverside church (New York, N.Y.)",
   "layout": "item",
   "link": "/Riverside/Riverside%20church%20construction.html",
+  "author": "George L. Balgue",
   "type": "item"
 },
 
@@ -257,6 +258,7 @@ index.addDoc(doc10);
   "subject": "College campuses",
   "layout": "item",
   "link": "/Lion/Cathedral%20heights.html",
+  "author": null,
   "type": "item"
 },
 
@@ -274,6 +276,7 @@ index.addDoc(doc10);
   "subject": "Cathedral of St. John the Divine (New York, N.Y.)",
   "layout": "item",
   "link": "/Cathedral/Cathedral%20Church%20of%20Saint%20John%20the%20Divine.html",
+  "author": "Balgue",
   "type": "item"
 },
 
@@ -285,6 +288,7 @@ index.addDoc(doc10);
   "subject": null,
   "layout": "item",
   "link": "/Cathedral/a-julia.html",
+  "author": null,
   "type": "item"
 },
 
@@ -296,6 +300,7 @@ index.addDoc(doc10);
   "subject": null,
   "layout": "item",
   "link": "/Cathedral/albatros.html",
+  "author": null,
   "type": "item"
 },
 
@@ -307,6 +312,7 @@ index.addDoc(doc10);
   "subject": null,
   "layout": "poem",
   "link": "/Cathedral/delayed.html",
+  "author": null,
   "type": "item"
 },
 
@@ -318,6 +324,7 @@ index.addDoc(doc10);
   "subject": null,
   "layout": "poem",
   "link": "/Cathedral/dreams.html",
+  "author": null,
   "type": "item"
 },
 
@@ -329,6 +336,7 @@ index.addDoc(doc10);
   "subject": null,
   "layout": "item",
   "link": "/Cathedral/narrative.html",
+  "author": null,
   "type": "item"
 },
 
@@ -363,15 +371,13 @@ index.addDoc(doc10);
         var queryTokens = index.pipeline.run(elasticlunr.tokenizer(query));
         var result = index.fieldSearch(queryTokens, fieldName, config); 
         console.log(result);
-        alert('attention');
-        resultdiv.append('<p class="">Found '+result.length+' result(s)</p>');
         alert(Object.keys(result));
         keys = [];
         //Below, for each query we add the result to the keys array
         for (var k in result) keys.push(k);
         alert("test");
         console.log(keys);
-        arrayLength = keys.length
+        arrayLength = keys.length;
         resultats.push(keys);
         })
           console.log(resultats);
@@ -381,12 +387,13 @@ index.addDoc(doc10);
                 });
                 });
           console.log(final);
+          resultdiv.append('<p class="">Found '+final.length+' result(s)</p>');
           for (var i = 0; i < arrayLength; i++) {
   	        alert("dans la boucle");
   	        alert(final[i]);
   	        var ref = final[i];
 	        //var ref = result[item].ref;
-            var searchitem = '<div class="result"><p><a href="/omekyll'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+'type :'+store[ref].type+'</p></div>';
+            var searchitem = '<div class="result"><p><a href="/omekyll'+store[ref].link+'">'+store[ref].title+'</a> by '+store[ref].author+' type :'+store[ref].type+'</p></div>';
             resultdiv.append(searchitem);
             }
         });
