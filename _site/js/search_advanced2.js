@@ -347,16 +347,15 @@ index.addDoc(doc10);
   
  $(document).ready(function() {
   $('button#search').on('click', function () {
-<<<<<<< HEAD
+    var keys = [];
     $(".fieldwrapper").each(function() {
         alert('field');
-        var query = $(this).find("input#keyword-search").val();
+        var query = $(this).find('input.keyword-search').val();
         alert(query);
         var fieldName = $(this).find('optgroup#optgroupDublinCore option:selected').text();
         alert(fieldName);
         var userConfig = null;
         var configStr = null;
-        var keys = [];
         if (userConfig != null) {
         configStr = JSON.stringify(userConfig);
         }
@@ -376,51 +375,6 @@ index.addDoc(doc10);
         //var keys = [];
         //Below, for each query we add the result to the keys array
         for (var k in result) keys.push(k);
-=======
- // var query = $("input#keyword-search").val();
- // alert(query);
-  var keys = [];
-  $('div.fieldwrapper').each(function() {
-  var query = $(this).find('input.keyword-search').val();
-  var fieldName = $(this).find('#optgroupDublinCore option:selected').text()
-  alert(query);
-  alert (fieldName);
-  var config = new elasticlunr.Configuration(configStr, index.getFields()).get();
-  var queryTokens = index.pipeline.run(elasticlunr.tokenizer(query));
-  var result = index.fieldSearch(queryTokens, fieldName, config); 
-  array_result = [];
-  for (var k in result) array_result.push(k);
-  alert(array_result);
-  keys.push(array_result);
-  alert(keys);
-  })
-  
-  
-  var fieldName = $('#optgroupDublinCore option:selected').text();
-  alert(fieldName);
-  var userConfig = null;
-  var configStr = null;
-  var keys = [];
-  if (userConfig != null) {
-  configStr = JSON.stringify(userConfig);
-  }
-  //var config = {fields: {title: {boost: 1, bool: "OR", expand: false }}};
- var config = new elasticlunr.Configuration(configStr, index.getFields()).get();
-  //var config = configuration.buildDefaultConfig(fieldName);
-  var queryTokens = index.pipeline.run(elasticlunr.tokenizer(query));
-  alert(queryTokens);
-  alert(fieldName);
-  alert('toto');
-  var result = index.fieldSearch(queryTokens, fieldName, config); 
-  console.log(result);
-    var resultdiv = $('#results');
-    alert('attention');
-  resultdiv.append('<p class="">Found '+result.length+' result(s)</p>');
-  alert(Object.keys(result));
-  //var keys = [];
-  //Below, for each query we add the result to the keys array
-  for (var k in result) keys.push(k);
->>>>>>> 72c0af912a305204dd35b8b6f628f6fce56c3268
   
   
             alert("test");
